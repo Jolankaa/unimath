@@ -32,9 +32,6 @@ def permutation(repetetion:str, n:int, r:int) ->int :
     elif repetetion == "1":
         return n**r
     
-
-
-
     
 def combination(n: int, r: int) -> int: 
     """
@@ -64,9 +61,6 @@ def combination(n: int, r: int) -> int:
     return factorial(n)/factorial(r)*factorial(n - r)
 
 def posibilty(n:int , r: int) -> int:
-    if r == 0 and n>r :
-        NonCompliancaRecognition()
-
     """
     Probability is a branch of mathematics and statistics concerning events and numerical
     descriptions of how likely they are to occur.
@@ -76,6 +70,21 @@ def posibilty(n:int , r: int) -> int:
     Formula:
         
     """
-    
+    if r == 0 and n>r :
+        NonCompliancaRecognition()
     
     return n/r
+
+def Transformation(rule , domain: list) -> list:
+    """
+    Transformation:
+    Transformations are the process of changing one set into another set.
+
+    Formula: 
+    f: A -> B 
+    """
+    codomain = list()
+    for i in range(domain):
+        codomain.append(rule(domain))
+
+    return codomain

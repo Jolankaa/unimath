@@ -1,5 +1,6 @@
 from errors import NonCompliancaRecognition
 from itertools import count 
+from definitions.set import Mset
 
 
 def FiniteCrateSet(i,n,k) -> list:
@@ -33,11 +34,10 @@ def Natural():
 
     {1,2,3,...}
     """
-    n = 0
-    while True:
-        yield n
-        n += 1
-        return n
+
+    Naturals = Mset(1,"inf",LowOpenRange=False ,HighOpenRange=False , Excluded=None)
+    
+    return Naturals
 
         
 def Bool_Natural(n: int) -> bool:
