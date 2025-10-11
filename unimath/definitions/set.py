@@ -7,10 +7,7 @@ class Mset:
         """
         This class defines the set mathematically.
         """
-
-
-
-
+        
         self.LowLimit = LowLimit
         self.HighLimit = HighLimit
         self.LowOpenRange = LowOpenRange
@@ -34,6 +31,27 @@ class Mset:
             return False
 
         return True
+    
+    @staticmethod
+    def from_string(s):
+        s = s.strip().replace(" ", "")  
+        
+        range_part, *excluded_part = s.split("-")
+        
+        acik_alt = range_part.startswith("(")
+        acik_ust = range_part.endswith(")")
+        
+        range_numbers = range_part[1:-1].split(",")
+        alt = float(range_numbers[0])
+        ust = float(range_numbers[1])
+        
+        if excluded_part:
+            excluded_str = excluded_part[0].strip("{}")
+            excluded = set(map(float, excluded_str.split(","))) if excluded_str else set()
+        else:
+            excluded = set()
+
+        return Mset(alt, ust, acik_alt, acik_ust, excluded)
 
     def __repr__(self):
 

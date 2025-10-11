@@ -4,6 +4,7 @@
 
 from functools import reduce
 import operator
+from definitions.set import Mset
 
 
 def sigmanotation(i: int , n:int , func) -> int:
@@ -86,3 +87,6 @@ def factorial(n: int) -> int:
         return result
     except ValueError:
         print("[ERROR] Factorial is not defined for negative numbers.")
+
+#def Transformation(rule , domain:Mset ) -> Mset:
+    

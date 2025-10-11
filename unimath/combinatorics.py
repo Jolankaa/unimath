@@ -75,16 +75,3 @@ def posibilty(n:int , r: int) -> int:
     
     return n/r
 
-def Transformation(rule , domain: list) -> list:
-    """
-    Transformation:
-    Transformations are the process of changing one set into another set.
-
-    Formula: 
-    f: A -> B 
-    """
-    codomain = list()
-    for i in range(domain):
-        codomain.append(rule(domain))
-
-    return codomain
