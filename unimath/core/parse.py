@@ -1,6 +1,11 @@
 #the file used to perform the parse operation
 
 
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+from unimath.definitions.set import Mset
+
 def ParseMset(s):
     """
     ParseMset:

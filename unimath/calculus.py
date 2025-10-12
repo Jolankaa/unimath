@@ -5,6 +5,7 @@
 from functools import reduce
 import operator
 from definitions.set import Mset
+from core.parse import ParseMset
 
 
 def sigmanotation(i: int , n:int , func) -> int:
@@ -88,5 +89,19 @@ def factorial(n: int) -> int:
     except ValueError:
         print("[ERROR] Factorial is not defined for negative numbers.")
 
-#def Transformation(rule , domain:Mset ) -> Mset:
-    
+def Transformation(rule , domain ):
+    parsed = ParseMset(str(domain))
+
+    NLowLimit = parsed.get("Lowlimit", None)
+    NHighLimit = parsed.get("HighLimit", None)
+    NLowOpenRange = parsed["LowOpenRange"]
+    NHighOpenRange = parsed["HighOpenRange"]
+    NExcluded = parsed["Excluded"]
+
+    return Mset(
+        rule(float(NLowLimit)),
+        rule(float(NHighLimit)),
+        NLowOpenRange,
+        NHighOpenRange,
+        NExcluded
+    )
