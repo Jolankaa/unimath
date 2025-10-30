@@ -130,4 +130,12 @@ def series(rule, n):
         from errors import NonCompliancaRecognition
         NonCompliancaRecognition()
 
+def Sum_Series(rule , endpoint):
+    
+    
+    sum_prod = list()
+    for i in range(1,endpoint):
+        sum_prod.append(rule(i))
+    
+    return sum(sum_prod)
 
