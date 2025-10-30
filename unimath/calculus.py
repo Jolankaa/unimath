@@ -1,11 +1,12 @@
-# Poyraz Soylu 
+# Poyraz Soylu
 # unimath
-# analysis functions 
+# analysis functions
 
 from functools import reduce
 import operator
 from definitions.set import Mset
 from core.parse import ParseMset
+from sets import Bool_Natural
 
 
 def sigmanotation(i: int , n:int , func) -> int:
@@ -34,7 +35,7 @@ def sigmanotation(i: int , n:int , func) -> int:
         values = list()
         values.append(func(i))
 
-        return sum(values) 
+        return sum(values)
 
 
 def productnatation(i: int, n:int , func) -> int:
@@ -105,3 +106,28 @@ def Transformation(rule , domain ):
         NHighOpenRange,
         NExcluded
     )
+
+def series(rule, n):
+
+
+    """
+    All well-defined functions from natural numbers to real numbers are called series.
+
+    Parameters :
+        rule : general term of the series
+        n : serieses index for a wanteed
+
+    Examples :
+        >>> (a)n is a serie . rule is 1/n
+            for n = 1
+                return 1/1
+            for n = 2
+                return 1/2
+    """
+    if Bool_Natural(n) == True:
+        return rule(n)
+    else:
+        from errors import NonCompliancaRecognition
+        NonCompliancaRecognition()
+
+
