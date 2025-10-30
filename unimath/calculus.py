@@ -6,7 +6,7 @@ from functools import reduce
 import operator
 from definitions.set import Mset
 from core.parse import ParseMset
-from sets import Bool_Natural
+from sets import Bool_Natural,Bool_RealNumber
 
 
 def sigmanotation(i: int , n:int , func) -> int:
@@ -124,7 +124,7 @@ def series(rule, n):
             for n = 2
                 return 1/2
     """
-    if Bool_Natural(n) == True:
+    if Bool_Natural(n) == True and Bool_RealNumber(rule(n)) == True:
         return rule(n)
     else:
         from errors import NonCompliancaRecognition

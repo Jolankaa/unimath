@@ -80,3 +80,26 @@ def Integer(n: int) :
         yield -step
         step += 1
 
+def Bool_RealNumber(n: int):
+    """
+    Real numbers most popular number sets in math.
+    Real numbers are arguably the most fundamental and commonly used set of numbers in mathematics.
+    Simply put,
+    a real number is any value that can represent a distance along a continuous line (the number line).
+    
+    Parameters: 
+        n : control number 
+    
+    Examples: 
+    >>>    for n = 1/2 
+        Bool_RealNumber(1/2) = True
+    >>> for n = 3 - 4i 
+        Bool_RealNumber(n) = True
+
+    """
+    if isinstance(n, (int, float)):
+        return True
+    elif isinstance(n, complex):
+        return n.imag == 0  # Sanal kısmı yoksa reel kabul edilir
+    else:
+        return False
