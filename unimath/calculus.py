@@ -131,11 +131,54 @@ def series(rule, n):
         NonCompliancaRecognition()
 
 def Sum_Series(rule , endpoint):
-    
-    
+    """
+    It is a function that provides the sum of the elements in the series.
+
+    Example: 
+        >>> (a)n = 1/n:
+            endpoint: 3
+            1/1 + 1/2 + 1/3  = 11/3 
+
+    """
     sum_prod = list()
     for i in range(1,endpoint):
         sum_prod.append(rule(i))
     
     return sum(sum_prod)
 
+def CharacteristicSeries(rule , n=10_000):
+    """
+    It is a function that understands the monotonicity of the series
+    and the characteristic of the series and returns it.
+    """
+    
+    differences = list()
+    differences = []
+    ratios = []
+    values = []
+
+    for i in range(n):
+        values.append(rule(i))
+
+    for i in range(1, len(values)):
+        differences.append(values[i] - values[i-1])
+        if values[i-1] != 0:
+            ratios.append(values[i] / values[i-1])
+
+    if all(d > 0 for d in differences):
+            monotony = "Increasing Series"
+    elif all(d < 0 for d in differences):
+            monotony = "Decreasing Series"
+    elif all(d == 0 for d in differences):
+            monotony = "Constant Series"
+    else:
+            monotony = "Non-monotonic Series"
+
+    if len(set(round(d, 6) for d in differences)) == 1:
+        typeofseries = "Arithmetic Series"
+    elif len(set(round(r, 6) for r in ratios)) == 1:
+        typeofseries = "Geometric Series"
+    else:
+        typeofseries = "Other / Unknown Type"
+
+    return monotony, typeofseries
