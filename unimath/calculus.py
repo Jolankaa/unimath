@@ -152,7 +152,6 @@ def CharacteristicSeries(rule , n=10_000):
     and the characteristic of the series and returns it.
     """
     
-    differences = list()
     differences = []
     ratios = []
     values = []
