@@ -72,5 +72,14 @@ class vector:
 
         return math.acos(cos_theta)
 
-        
+    def __repr__(self):
+        return f"Vector({self.dimensions})"
+
+    def __str__(self):
+        if len(self.dimensions) == 2:
+            dimensions = "R^2"
+        elif len(self.dimensions) == 3:
+            dimensions = "R^3"
+
+        return f"<Vector {self.dimensions}, |v|={self.magnitude():.2f} , dimensions={dimensions}>"
         
