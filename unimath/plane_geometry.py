@@ -106,10 +106,10 @@ class Vector:
             ax.set_ylim([-1, self.dimensions[1]+1])
             ax.set_zlim([0, self.dimensions[2]+1])
 
-            ax.set_xlabel('X Ekseni')
-            ax.set_ylabel('Y Ekseni')
-            ax.set_zlabel('Z Ekseni')
-            ax.set_title('3B Vektör Görselleştirmesi')
+            ax.set_xlabel('X axis')
+            ax.set_ylabel('Y axis')
+            ax.set_zlabel('Z axis')
+            ax.set_title('R^3 Visualization')
 
             plt.show()
 
@@ -156,7 +156,3 @@ class Vector:
 
     def __iter__(self):
         return iter(self.dimensions)
-
-v = Vector([24,21])
-
-Vector.Visualization(v)
