@@ -81,8 +81,8 @@ class Vector:
             origin = Vector([0, 0])
             plt.figure(figsize=(6,6))
             plt.quiver(*origin, *v, angles='xy', scale_units='xy', scale=1, color='r', width=0.01)
-            plt.xlim(-1, 5)
-            plt.ylim(-1, 5)
+            plt.xlim(-1, self.dimensions[0]+1)
+            plt.ylim(-1,self.dimensions[1]+1)
             plt.grid(True)
             plt.axhline(0, color='black', linewidth=0.8)
             plt.axvline(0, color='black', linewidth=0.8)
@@ -93,6 +93,26 @@ class Vector:
             plt.ylabel("y axis")
             plt.gca().set_aspect('equal', adjustable='box')
             plt.show()
+        elif len(v) == 3:
+            origin = Vector([0, 0, 0])
+            fig = plt.figure()
+            ax = fig.add_subplot(111, projection='3d')
+
+            ax.quiver(origin[0], origin[1], origin[2],
+                    v[0], v[1], v[2],
+                    color='b', arrow_length_ratio=0.1)
+
+            ax.set_xlim([-1, self.dimensions[0]+1])
+            ax.set_ylim([-1, self.dimensions[1]+1])
+            ax.set_zlim([0, self.dimensions[2]+1])
+
+            ax.set_xlabel('X Ekseni')
+            ax.set_ylabel('Y Ekseni')
+            ax.set_zlabel('Z Ekseni')
+            ax.set_title('3B Vektör Görselleştirmesi')
+
+            plt.show()
+
 
     def __repr__(self):
         return f"Vector({self.dimensions})"
@@ -136,3 +156,7 @@ class Vector:
 
     def __iter__(self):
         return iter(self.dimensions)
+
+v = Vector([24,21])
+
+Vector.Visualization(v)
