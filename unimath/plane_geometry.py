@@ -23,7 +23,7 @@ class Vector:
             x = self.dimensions[0] 
             y = self.dimensions[1]
             z = self.dimensions[2]
-            length = (x**2 + y**2 + z**2)**1/2
+            length = (x**2 + y**2 + z**2)**0.5
         return length
 
     def information(self):
@@ -112,6 +112,15 @@ class Vector:
             ax.set_title('R^3 Visualization')
 
             plt.show()
+
+    def UnitVector(self):
+        """
+        Returns the unit vector of the given vector.
+        """
+        Norm = self.magnitude()
+        if Norm == 0:
+            raise ValueError("Zero is undefined in division")
+        return [x / Norm for x in self.dimensions]
 
 
     def __repr__(self):
