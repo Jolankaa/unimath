@@ -1,7 +1,7 @@
 from errors import NonCompliancaRecognition
 import math
 
-class vector:
+class Vector:
     def __init__(self, dimensions):
         if not isinstance(dimensions , list) :
             raise TypeError("You must list the dimensions for manipulation")
@@ -83,3 +83,28 @@ class vector:
 
         return f"<Vector {self.dimensions}, |v|={self.magnitude():.2f} , dimensions={dimensions}>"
         
+    def __add__(self, other):
+        """Vector addition"""
+        if len(self.dimensions) != len(other.dimensions):
+            raise ValueError("Vectors must have the same dimension for addition.")
+        return Vector([a + b for a, b in zip(self.dimensions, other.dimensions)])
+
+    def __sub__(self, other):
+        """Vector subtraction"""
+        if len(self.dimensions) != len(other.dimensions):
+            raise ValueError("Vectors must have the same dimension for subtraction.")
+        return Vector([a - b for a, b in zip(self.dimensions, other.dimensions)])
+
+    def __mul__(self, scalar):
+        """Scalar multiplication"""
+        if not isinstance(scalar, (int, float)):
+            raise TypeError("You can only multiply a vector by a scalar (number).")
+        return Vector([a * scalar for a in self.dimensions])
+
+    def __matmul__(self, other):
+        """Dot product with @ operator"""
+        return self.Inner_product(other)
+
+    def __eq__(self, other):
+        """Check if two vectors are equal"""
+        return self.dimensions == other.dimensions
