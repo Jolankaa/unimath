@@ -108,3 +108,9 @@ class Vector:
     def __eq__(self, other):
         """Check if two vectors are equal"""
         return self.dimensions == other.dimensions
+    
+    def __getitem__(self, index):
+        return self.dimensions[index]
+
+    def __iter__(self):
+        return iter(self.dimensions)
