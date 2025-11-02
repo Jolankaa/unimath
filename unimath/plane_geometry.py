@@ -1,5 +1,6 @@
 from errors import NonCompliancaRecognition
 import math
+import matplotlib.pyplot as plt
 
 class Vector:
     def __init__(self, dimensions):
@@ -71,6 +72,27 @@ class Vector:
         cos_theta = max(-1, min(1, inner_product / (mag1 * mag2)))
 
         return math.acos(cos_theta)
+    
+    def Visualization(self):
+
+        v = self.dimensions
+
+        if len(v) == 2:
+            origin = Vector([0, 0])
+            plt.figure(figsize=(6,6))
+            plt.quiver(*origin, *v, angles='xy', scale_units='xy', scale=1, color='r', width=0.01)
+            plt.xlim(-1, 5)
+            plt.ylim(-1, 5)
+            plt.grid(True)
+            plt.axhline(0, color='black', linewidth=0.8)
+            plt.axvline(0, color='black', linewidth=0.8)
+            plt.text(v[0]/2, v[1]/2, f"{v}", fontsize=12, color='blue')
+
+            plt.title("R^2 Visualization")
+            plt.xlabel("x axis")
+            plt.ylabel("y axis")
+            plt.gca().set_aspect('equal', adjustable='box')
+            plt.show()
 
     def __repr__(self):
         return f"Vector({self.dimensions})"
