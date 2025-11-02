@@ -137,7 +137,18 @@ class Vector:
             raise ValueError("Zero vector: cosine undefined.")
 
         return InnerP / (normv1 * normv2)
+    
+    def Projection(self, other):
+        """
+        Returns the projection of one vector onto another vector.
+        proj_v2(v1) = (|v1| * cosθ) * unit(v2)
+        """
+        unitv2 = other.UnitVector()
+        cosa = self.CosTwoVector(other)
+        normv1 = self.magnitude()
 
+        scalar = normv1 * cosa
+        return [scalar * x for x in unitv2]
 
     def __repr__(self):
         return f"Vector({self.dimensions})"
