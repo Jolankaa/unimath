@@ -121,6 +121,22 @@ class Vector:
         if Norm == 0:
             raise ValueError("Zero is undefined in division")
         return [x / Norm for x in self.dimensions]
+    
+    def CosTwoVector(self, other):
+        """
+        Finds the cosine of the angle between two vectors.
+        cos(θ) = (v1 · v2) / (‖v1‖ * ‖v2‖)
+        """
+
+        InnerP = self.Inner_product(other)
+
+        normv1 = self.magnitude()
+        normv2 = other.magnitude()
+
+        if normv1 == 0 or normv2 == 0:
+            raise ValueError("Zero vector: cosine undefined.")
+
+        return InnerP / (normv1 * normv2)
 
 
     def __repr__(self):
