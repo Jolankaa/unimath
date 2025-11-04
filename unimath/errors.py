@@ -13,3 +13,20 @@ def NonCompliancaRecognition():
 
     print("[ERROR] Non-Complianca Recognition Error ")
     exit()
+
+class SizeLimitExceededError:
+    """The operations described are only valid in 2 and 3 dimensional planes and spaces."""
+    pass
+
+class WrongDataTypeError(Exception):
+    """
+    An error is thrown because the data type in the given 
+    parameter does not match the requested data type.
+    """
+
+    """
+    def __init__(self, variable_name, expected_type):
+        message = f" The variable {variable_name} must be of type {expected_type.__name__}"
+        super().__init__(message)
+    """
+    pass

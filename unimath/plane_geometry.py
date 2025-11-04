@@ -1,4 +1,4 @@
-from errors import NonCompliancaRecognition
+from errors import *
 import math
 import matplotlib.pyplot as plt
 
@@ -45,7 +45,7 @@ class Vector:
             y = self.dimensions[1]
             z = self.dimensions[2]
             vektorinformation.append({"dimension":2})
-            length = (x**2 + y**2 + z**2)**1/2
+            length = (x**2 + y**2 + z**2)**0.5
             vektorinformation.append({"length":length})    
         return vektorinformation
     
@@ -192,3 +192,32 @@ class Vector:
 
     def __iter__(self):
         return iter(self.dimensions)
+    
+class line:
+    def __init__(self, direct_vector , point , perperdicular_vector, slope):
+        definitions = [
+            isinstance(direct_vector,list),
+            isinstance(perperdicular_vector ,list),
+            isinstance(slope, float),
+            isinstance(point, list)
+        ]
+
+        if not all(definitions):
+            raise WrongDataTypeError()
+
+        dimensions = [
+            len(direct_vector),
+            len(point),
+            len(perperdicular_vector),
+        ]
+
+        for i in dimensions:
+            if not 1<i<=3:
+                raise SizeLimitExceededError()
+
+
+        self.direct_vektor = direct_vector
+        self.point = point
+        self.perpedicular_vector = perperdicular_vector
+        self.slope = slope
+    
