@@ -36,7 +36,7 @@ Developed and maintained by a **Mathematics undergraduate student at Marmara Uni
 - Combination  
 - Posibilty 
 
---
+---
 
 ## Calculus
 
@@ -45,7 +45,8 @@ Developed and maintained by a **Mathematics undergraduate student at Marmara Uni
 - Transformation
 - Monotonicity of the series  
 
---
+---
+
 ##  Visualization
 
 unimath includes built-in vector visualization features using **matplotlib**, allowing users to plot and analyze vector relationships directly in Python. This helps bridge the gap between symbolic manipulation and geometric intuition.
