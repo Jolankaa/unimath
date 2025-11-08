@@ -1,7 +1,51 @@
-# unimath — A Mathematical Environment Library in Python
+# unimath —  Mathematical Environment Library in Python
 
-**unimath** is a Python library that provides an abstract mathematical environment designed to represent and manipulate sets, intervals, and number systems in a symbolic and intuitive way. New things will continue to be added every day.
+**unimath** is a Python library that provides an abstract mathematical environment designed to represent and manipulate sets, intervals, and number systems in a symbolic and intuitive way.  
+The project is continuously growing, with new mathematical structures and operations being added every day.
 
-The project is developed and maintained by a **Mathematics undergraduate student at Marmara University**, with a focus on combining mathematical theory and computational representation.
+Developed and maintained by a **Mathematics undergraduate student at Marmara University**, unimath aims to combine mathematical theory with computational representation, creating a bridge between abstract reasoning and code implementation.
 
 ---
+
+##  Features
+
+- Abstract representation of **Sets**, **Intervals**, and **Number Systems**  
+- Support for **Vector operations** and **linear algebra concepts**  
+- Symbolic and numerical computation environment  
+- Integration with **matplotlib** for visualization  
+- Intuitive class structures and error handling for mathematical rigor
+
+---
+
+##  Vector 
+
+- Magnitude  
+- Specific vector information  
+- Inner product  
+- Angle between two vectors  
+- Visualization with matplotlib  
+- Find unit vector  
+- Cosine value between two vectors  
+- Projection around two vectors  
+
+---
+
+## Combinatorics 
+
+- Permutation  
+- Combination  
+- Posibilty 
+
+--
+
+## Calculus
+
+- Find Supremum İnfrimum value 
+- Σ and Π operations  
+- Transformation
+- Monotonicity of the series  
+
+--
+##  Visualization
+
+unimath includes built-in vector visualization features using **matplotlib**, allowing users to plot and analyze vector relationships directly in Python. This helps bridge the gap between symbolic manipulation and geometric intuition.
