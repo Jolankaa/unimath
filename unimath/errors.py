@@ -18,7 +18,7 @@ class SizeLimitExceededError:
     """The operations described are only valid in 2 and 3 dimensional planes and spaces."""
     pass
 
-class WrongDataTypeError(Exception):
+class WrongDataTypeError:
     """
     An error is thrown because the data type in the given 
     parameter does not match the requested data type.
@@ -28,5 +28,12 @@ class WrongDataTypeError(Exception):
     def __init__(self, variable_name, expected_type):
         message = f" The variable {variable_name} must be of type {expected_type.__name__}"
         super().__init__(message)
+    """
+    pass
+
+class RequiredModule:
+    """
+    There are external modules required for some functions.
+    If the required module is not installed, you will get this error.
     """
     pass

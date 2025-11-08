@@ -1,6 +1,5 @@
 from errors import *
 import math
-import matplotlib.pyplot as plt
 
 class Vector:
     def __init__(self, dimensions):
@@ -74,6 +73,12 @@ class Vector:
         return math.acos(cos_theta)
     
     def Visualization(self):
+        try: 
+            import matplotlib.pyplot as plt
+        except ModuleNotFoundError:
+            raise RequiredModule(
+            "matplotlib module not installed. Install it with 'pip install matplotlib'."
+            )
 
         v = self.dimensions
 
@@ -193,31 +198,52 @@ class Vector:
     def __iter__(self):
         return iter(self.dimensions)
     
-class line:
-    def __init__(self, direct_vector , point , perperdicular_vector, slope):
-        definitions = [
-            isinstance(direct_vector,list),
-            isinstance(perperdicular_vector ,list),
-            isinstance(slope, float),
-            isinstance(point, list)
-        ]
+class Line:
+    def __init__(self, point, direction=None, slope=None, perpendicular_vector=None):
+        if not (isinstance(point, list) and isinstance(direction, list)):
+            raise WrongDataTypeError("Must be in the point and direction list type")
+        if len(point) != len(direction):
+            raise SizeLimitExceededError("Point and direction list must be the same size")
+        if len(point) not in (2, 3):
+            raise SizeLimitExceededError("Only dimensions 2 and 3 are supported")
 
-        if not all(definitions):
-            raise WrongDataTypeError()
-
-        dimensions = [
-            len(direct_vector),
-            len(point),
-            len(perperdicular_vector),
-        ]
-
-        for i in dimensions:
-            if not 1<i<=3:
-                raise SizeLimitExceededError()
-
-
-        self.direct_vektor = direct_vector
         self.point = point
-        self.perpedicular_vector = perperdicular_vector
-        self.slope = slope
+        #self.direction = direction
+
+        if slope is None:
+            if len(point) == 2:
+                dx = direction[0]
+                dy = direction[1]
+                self.slope = None if dx == 0 else (dy / dx)
+            else:
+                self.slope = None
+        else:
+            if not isinstance(slope, (int, float)):
+                raise WrongDataTypeError("Slope must be float")
+            self.slope = float(slope)
+
+        if perpendicular_vector is None:
+            if len(direction) == 2:
+                a, b = direction
+                self.perpendicular_vector = [-b, a]
+            else:
+                self.perpendicular_vector = None
+        else:
+            if not isinstance(perpendicular_vector, list):
+                raise WrongDataTypeError("perpendicular_vector must be list")
+            self.perpendicular_vector = perpendicular_vector
+
+
+
+
+    def point_at(self, t):
+        if not isinstance(t, (int, float)):
+            raise WrongDataTypeError("t must be float")
+        return [p + t * d for p, d in zip(self.point, self.direction)]
     
+    def __repr__(self):
+        return self.__str__()
+    
+    def __str__(self):
+        return f"r(t) {self.point} t*{self.direction}"
+        
