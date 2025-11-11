@@ -14,11 +14,21 @@ def NonCompliancaRecognition():
     print("[ERROR] Non-Complianca Recognition Error ")
     exit()
 
-class SizeLimitExceededError:
+class DefinitionError(Exception): 
+    """
+    Mathematics is based on definitions.
+    If you make a definitional error in the operations, 
+    the whole operation will be wrong.
+    This error occurs when you make the mathematical definition incorrect.
+    """
+    pass
+
+
+class SizeLimitExceededError(Exception):
     """The operations described are only valid in 2 and 3 dimensional planes and spaces."""
     pass
 
-class WrongDataTypeError:
+class WrongDataTypeError(Exception):
     """
     An error is thrown because the data type in the given 
     parameter does not match the requested data type.
@@ -31,7 +41,7 @@ class WrongDataTypeError:
     """
     pass
 
-class RequiredModule:
+class RequiredModule(Exception):
     """
     There are external modules required for some functions.
     If the required module is not installed, you will get this error.

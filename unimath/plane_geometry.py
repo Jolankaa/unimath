@@ -234,8 +234,6 @@ class Line:
             self.perpendicular_vector = perpendicular_vector
 
 
-
-
     def point_at(self, t):
         if not isinstance(t, (int, float)):
             raise WrongDataTypeError("t must be float")
