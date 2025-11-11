@@ -31,14 +31,43 @@ class Matrix:
             raise IndexError("Column index out of range.")
         return [row[index] for row in self.arrays]
 
+
     def Transpose(self):
         """
         This function transposes the matrix.
         """
-
+        """
         cols = [self.get_column(i) for i in range(self.cols)]
-
         return Matrix(cols)
+        """
+        transposed_data = [
+            [self.arrays[j][i] for j in range(self.rows)]
+            for i in range(self.cols)
+        ]
+        return Matrix(transposed_data)
+    
+    def is_SquareMatrix(self):
+        """
+        A square matrix is a matrix with the same number of rows and columns. 
+        It occupies an important place, 
+        especially in the definition of determinants
+        """
+
+        if self.rows == self.cols:
+            return True 
+        else: 
+            return False
+        
+    def is_SymmetricalMatrix(self):
+        """
+            A matrix is symmetrical if it is equal to its transpose. A == Aᵗ
+        """
+        if self.is_SquareMatrix == False:
+            return False
+    
+        transposed = self.Transpose()
+        if self == transposed:
+            return True
 
 
     """  
@@ -47,6 +76,14 @@ class Matrix:
             raise ValueError("The number of rows and columns in the matrix must be the same")
         for i in 
     """
+    def __eq__(self, other):
+        if self.rows != other.rows or self.cols != other.cols:
+            return False
+        for i in range(self.rows):
+            for j in range(self.cols):
+                if self.arrays[i][j] != other.arrays[i][j]:
+                    return False
+        return True
 
     def __add__(self, other):
         """
@@ -80,3 +117,8 @@ class Matrix:
     def __repr__(self):
         return "\n".join(str(row) for row in self.arrays)
 
+A = Matrix([
+    [1, 2, 3],
+    [2, 5, 6],
+    [3, 6, 9]
+])
