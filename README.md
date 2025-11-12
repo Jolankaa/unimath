@@ -30,6 +30,14 @@ Developed and maintained by a **Mathematics undergraduate student at Marmara Uni
 
 ---
 
+##  Matrix
+
+- Precisely defined mathematically 
+- Transpose  
+- Special matrix definitions 
+
+---
+
 ## Combinatorics 
 
 - Permutation  
