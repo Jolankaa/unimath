@@ -69,6 +69,41 @@ class Matrix:
         if self == transposed:
             return True
         
+    def Determinant(self):
+        """
+        In mathematics, the determinant is a scalar-valued function of the entries of a square matrix.
+        The determinant of a matrix A is commonly denoted det(A),
+        det A, or |A|. Its value characterizes some properties of the matrix and the linear map represented, 
+        on a given basis, by the matrix.
+        """
+
+        if self.is_SquareMatrix() == False:
+            raise DefinitionError("The determinant is defined in square matrices")
+
+        if self.FindDimension() == (2,2):
+            value = self.FindElement(1,1)*self.FindElement(2,2) - self.FindElement(1,2)*self.FindElement(2,1)
+
+            return value
+
+
+    def FindElement(self, row, cols):
+        """
+        It allows to find the element in the desired column and row.
+        """
+        try:
+            result = self.arrays[row-1][cols-1]
+        except IndexError:
+            raise DefinitionError("More value were entered than the number of rows or columns in the matrix.")
+
+        return result
+    
+    def FindDimension(self):
+        """
+        Returns the dimensions of the input matrix
+        """
+        return (self.rows ,self.cols)
+
+
     def __matmul__(self,other):
         """
         classic row-by-column and column-by-row multiplication
@@ -154,10 +189,9 @@ class Matrix:
         return "\n".join(str(row) for row in self.arrays)
 
 A = Matrix([
-    [1, 2, 3],
-    [2, 5, 6],
-    [3, 6, 9]
+    [1, 2],
+    [2, 5]
 ])
 
+print(A.Determinant())
 
-print(A@A)
