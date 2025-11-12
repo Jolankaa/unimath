@@ -68,6 +68,40 @@ class Matrix:
         transposed = self.Transpose()
         if self == transposed:
             return True
+        
+    def __matmul__(self,other):
+        """
+        classic row-by-column and column-by-row multiplication
+        """
+        if not self.cols == self.rows:
+            raise DefinitionError("In order to multiply two matrices (A@B), the number of columns of matrix A must be equal to the number of rows of matrix B.")
+    
+        result = [[0 for _ in range(len(other.arrays[0]))] for _ in range(len(self.arrays))]
+
+        for i in range(len(self.arrays)):         
+            for j in range(len(other.arrays[0])):   
+                for k in range(len(other.arrays)):  
+                    result[i][j] += self.arrays[i][k] * other.arrays[k][j]
+
+        return Matrix(result)
+
+    def __mul__(self , other):
+        """
+        hammard product 
+        """
+        if self.rows != other.rows or self.cols != other.cols:
+            raise DefinitionError("The number of rows and columns of two matrices must be equal")
+        
+        try:
+            result = [
+                [self.arrays[i][j] * other.arrays[i][j] for j in range(self.cols)]
+                for i in range(self.rows)
+            ]
+            return Matrix(result)
+        except IndexError:
+            raise DefinitionError("wrong index defined")
+        
+
 
 
     """  
@@ -76,6 +110,8 @@ class Matrix:
             raise ValueError("The number of rows and columns in the matrix must be the same")
         for i in 
     """
+
+
     def __eq__(self, other):
         if self.rows != other.rows or self.cols != other.cols:
             return False
@@ -122,3 +158,6 @@ A = Matrix([
     [2, 5, 6],
     [3, 6, 9]
 ])
+
+
+print(A@A)
