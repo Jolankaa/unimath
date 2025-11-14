@@ -23,7 +23,6 @@ class DefinitionError(Exception):
     """
     pass
 
-
 class SizeLimitExceededError(Exception):
     """The operations described are only valid in 2 and 3 dimensional planes and spaces."""
     pass

@@ -30,7 +30,15 @@ class Matrix:
         if index < 0 or index >= self.cols:
             raise IndexError("Column index out of range.")
         return [row[index] for row in self.arrays]
-
+    
+    def DelColumn(self, index): 
+        """
+        Allows to delete the column indexed in the given parameter
+        """
+        result = [
+            
+        ]
+        pass
 
     def Transpose(self):
         """
@@ -69,6 +77,17 @@ class Matrix:
         if self == transposed:
             return True
         
+    """def Cofactor(self, rows , cols):
+        first_product = (-1)**(rows+cols)
+
+        cofactor_matris = 
+
+        second_product = 
+        
+
+
+        pass"""
+        
     def Determinant(self):
         """
         In mathematics, the determinant is a scalar-valued function of the entries of a square matrix.
@@ -82,8 +101,10 @@ class Matrix:
 
         if self.FindDimension() == (2,2):
             value = self.FindElement(1,1)*self.FindElement(2,2) - self.FindElement(1,2)*self.FindElement(2,1)
-
             return value
+        
+        #if self.FindDimension() == (3,3):
+
 
 
     def FindElement(self, row, cols):
@@ -100,6 +121,12 @@ class Matrix:
     def FindDimension(self):
         """
         Returns the dimensions of the input matrix
+
+        Example: 
+            >>> Matrix.FindDimension(1,2)
+                search (a)1,2
+                and finding in matrix
+
         """
         return (self.rows ,self.cols)
 
@@ -122,7 +149,7 @@ class Matrix:
 
     def __mul__(self , other):
         """
-        hammard product 
+        Hadamard product 
         """
         if self.rows != other.rows or self.cols != other.cols:
             raise DefinitionError("The number of rows and columns of two matrices must be equal")
@@ -183,15 +210,14 @@ class Matrix:
             ]
             return Matrix(result)
         except IndexError:
-            raise DefinitionError("For the aggregation to be defined, the number of rows and columns must be the same.")
+            raise DefinitionError("For the subregation to be defined, the number of rows and columns must be the same.")
 
     def __repr__(self):
         return "\n".join(str(row) for row in self.arrays)
-
+"""
 A = Matrix([
     [1, 2],
     [2, 5]
 ])
-
-print(A.Determinant())
+"""
 
