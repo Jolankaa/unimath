@@ -98,13 +98,30 @@ class Matrix:
 
         if self.is_SquareMatrix() == False:
             raise DefinitionError("The determinant is defined in square matrices")
+        try:
+            if self.FindDimension() == (2,2):
+                value = self.FindElement(1,1)*self.FindElement(2,2) - self.FindElement(1,2)*self.FindElement(2,1)
+                return value
+            
+            if self.FindDimension() == (3,3):
+                """
+                sarrus method
+                """
+                right = (
+                self.FindElement(1,1)*self.FindElement(2,2)*self.FindElement(3,3)+
+                self.FindElement(2,1)*self.FindElement(3,2)*self.FindElement(1,3)+
+                self.FindElement(3,1)*self.FindElement(1,2)*self.FindElement(2,3)
+                )
 
-        if self.FindDimension() == (2,2):
-            value = self.FindElement(1,1)*self.FindElement(2,2) - self.FindElement(1,2)*self.FindElement(2,1)
-            return value
-        
-        #if self.FindDimension() == (3,3):
+                left = (
+                self.FindElement(3,1)*self.FindElement(2,2)*self.FindElement(1,3)+
+                self.FindElement(2,3)*self.FindElement(3,2)*self.FindElement(1,1)+
+                self.FindElement(3,3)*self.FindElement(1,2)*self.FindElement(2,1)
+                )
 
+                return right + left
+        except TypeError:
+            raise NonSymbolicValue("This determinant function can only calculate on numeric data. For symbolic data, please refer to the SymbolicMatrix function.")
 
 
     def FindElement(self, row, cols):
@@ -214,10 +231,11 @@ class Matrix:
 
     def __repr__(self):
         return "\n".join(str(row) for row in self.arrays)
-"""
-A = Matrix([
-    [1, 2],
-    [2, 5]
-])
-"""
 
+A = Matrix([
+    [1, 2, 3],
+    [2, 5, 5],
+    [2, 5, "n"]
+])
+
+print(A.Determinant())

@@ -46,3 +46,6 @@ class RequiredModule(Exception):
     If the required module is not installed, you will get this error.
     """
     pass
+
+class NonSymbolicValue(Exception):
+    pass
