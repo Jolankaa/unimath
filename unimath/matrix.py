@@ -232,10 +232,10 @@ class Matrix:
     def __repr__(self):
         return "\n".join(str(row) for row in self.arrays)
 
-A = Matrix([
+"""A = Matrix([
     [1, 2, 3],
     [2, 5, 5],
     [2, 5, "n"]
 ])
 
-print(A.Determinant())
+print(A.Determinant())"""

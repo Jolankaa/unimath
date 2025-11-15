@@ -35,6 +35,10 @@ Developed and maintained by a **Mathematics undergraduate student at Marmara Uni
 - Precisely defined mathematically 
 - Transpose  
 - Special matrix definitions 
+- Determinant
+- Hadamard and classical product
+- Symbolic Matris 
+- (3,3) Sarrus Method
 
 ---
 
@@ -52,6 +56,7 @@ Developed and maintained by a **Mathematics undergraduate student at Marmara Uni
 - Σ and Π operations  
 - Transformation
 - Monotonicity of the series  
+- Symbolid sequance
 
 ---
 
