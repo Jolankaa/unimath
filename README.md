@@ -1,65 +1,165 @@
-# unimath —  Mathematical Environment Library in Python
+# unimath — Mathematical Environment Library in Python
 
-**unimath** is a Python library that provides an abstract mathematical environment designed to represent and manipulate sets, intervals, and number systems in a symbolic and intuitive way.  
+  
+
+**unimath** is a Python library that provides an abstract mathematical environment designed to represent and manipulate sets, intervals, and number systems in a symbolic and intuitive way.
+
 The project is continuously growing, with new mathematical structures and operations being added every day.
+
+  
 
 Developed and maintained by a **Mathematics undergraduate student at Marmara University**, unimath aims to combine mathematical theory with computational representation, creating a bridge between abstract reasoning and code implementation.
 
+  
+
 ---
 
-##  Features
+  
 
-- Abstract representation of **Sets**, **Intervals**, and **Number Systems**  
-- Support for **Vector operations** and **linear algebra concepts**  
-- Symbolic and numerical computation environment  
-- Integration with **matplotlib** for visualization  
+## Features
+
+  
+
+- Abstract representation of **Sets**, **Intervals**, and **Number Systems**
+
+- Support for **Vector operations** and **linear algebra concepts**
+
+- Symbolic and numerical computation environment
+
+- Integration with **matplotlib** for visualization
+
 - Intuitive class structures and error handling for mathematical rigor
 
----
-
-##  Vector 
-
-- Magnitude  
-- Specific vector information  
-- Inner product  
-- Angle between two vectors  
-- Visualization with matplotlib  
-- Find unit vector  
-- Cosine value between two vectors  
-- Projection around two vectors  
+  
 
 ---
 
-##  Matrix
+  
 
-- Precisely defined mathematically 
-- Transpose  
-- Special matrix definitions 
+## Vector
+
+  
+
+- Magnitude
+
+- Specific vector information
+
+- Inner product
+
+- Angle between two vectors
+
+- Visualization with matplotlib
+
+- Find unit vector
+
+- Cosine value between two vectors
+
+- Projection around two vectors
+
+  
+
+---
+
+  
+
+## Matrix
+
+  
+
+- Precisely defined mathematically
+
+- Transpose
+
+- Special matrix definitions
+
 - Determinant
+
 - Hadamard and classical product
-- Symbolic Matris 
+
+- Symbolic Matris
+
 - (3,3) Sarrus Method
 
----
-
-## Combinatorics 
-
-- Permutation  
-- Combination  
-- Posibilty 
+  
 
 ---
+
+  
+
+## Combinatorics
+
+  
+
+- Permutation
+
+- Combination
+
+- Posibilty
+
+  
+
+---
+
+  
 
 ## Calculus
 
-- Find Supremum İnfrimum value 
-- Σ and Π operations  
+  
+
+- Find Supremum İnfrimum value
+
+- Σ and Π operations
+
 - Transformation
-- Monotonicity of the series  
+
+- Monotonicity of the series
+
 - Symbolid sequance
+
+  
 
 ---
 
-##  Visualization
+  
+
+## Visualization
+
+  
 
 unimath includes built-in vector visualization features using **matplotlib**, allowing users to plot and analyze vector relationships directly in Python. This helps bridge the gap between symbolic manipulation and geometric intuition.
+
+## Installation / Download
+
+  
+
+### PyPI (Recommended)
+
+```bash
+pip install unimath
+```
+### Git 
+
+```bash
+git clone  https://github.com/Jolankaa/unimath
+cd unimath
+pip install .
+```
+
+###  Few Examples
+```bash
+import unimath
+# Example: Creating a vector
+
+v = unimath.Vector([1,2,3])
+
+print("Magnitude:", v.magnitude())
+# For visualization
+v.Visualization()
+
+# Example: Creating a matrix
+
+m = unimath.Matrix([[1,2],[3,4]])
+print("Determinant:", m.determinant())
+```
+
+
