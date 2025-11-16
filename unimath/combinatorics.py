@@ -1,5 +1,5 @@
-from calculus import factorial
-from errors import NonCompliancaRecognition 
+from .calculus import factorial
+from .errors import NonCompliancaRecognition 
 
 def permutation(repetetion:str, n:int, r:int) ->int :    
     """

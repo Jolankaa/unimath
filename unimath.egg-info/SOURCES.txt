@@ -7,7 +7,10 @@ unimath/calculus.py
 unimath/combinatorics.py
 unimath/errors.py
 unimath/matrix.py
+unimath/mset.py
+unimath/parse.py
 unimath/plane_geometry.py
+unimath/range.py
 unimath/sets.py
 unimath/symbolic.py
 unimath.egg-info/PKG-INFO
@@ -16,8 +19,5 @@ unimath.egg-info/dependency_links.txt
 unimath.egg-info/requires.txt
 unimath.egg-info/top_level.txt
 unimath/core/__init__.py
-unimath/core/parse.py
-unimath/core/range.py
 unimath/definitions/__init__.py
-unimath/definitions/set.py
 unimath/definitions/test.py

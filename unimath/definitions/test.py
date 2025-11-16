@@ -1,4 +1,4 @@
-from set import Mset 
+from unimath.mset import Mset 
 
 u = Mset.from_string("(6,13)-{7}")
 

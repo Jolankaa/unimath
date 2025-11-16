@@ -1,6 +1,5 @@
-from errors import NonCompliancaRecognition
+from .errors import NonCompliancaRecognition
 from itertools import count 
-from definitions.set import Mset
 
 
 def FiniteCrateSet(i,n,k) -> list:
@@ -24,21 +23,21 @@ def FiniteCrateSet(i,n,k) -> list:
             sets.append(j)
     return sets
 
-def Natural():
-    """
-    ℕ :
-    This function represents the set of natural numbers.
-    According to Peano's axioms and ours, 0 is not included.
+#"""def Natural():
+#    """
+    #ℕ :
+    #This function represents the set of natural numbers.
+    #According to Peano's axioms and ours, 0 is not included.
     
-    This function continues to translate until it cannot be stopped under the required conditions.
+    #This function continues to translate until it cannot be stopped under the required conditions.
 
-    {1,2,3,...}
+#    {1,2,3,...}
     """
 
     Naturals = Mset(1,"inf",LowOpenRange=False ,HighOpenRange=False , Excluded=None)
     
     return Naturals
-
+"""
         
 def Bool_Natural(n: int) -> bool:
     """

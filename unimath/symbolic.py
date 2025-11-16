@@ -1,4 +1,4 @@
-from errors import RequiredModule
+from .errors import RequiredModule
 
 
 try:

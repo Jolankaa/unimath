@@ -1,6 +1,6 @@
 # for sup and inf function
  
-from unimath.definitions.set import Mset
+from unimath.mset import Mset
 from parse import ParseMset
 
 def sup(set: Mset) -> Mset:
