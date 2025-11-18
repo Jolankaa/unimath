@@ -216,6 +216,13 @@ class Matrix:
         except IndexError:
             raise DefinitionError("For the aggregation to be defined, the number of rows and columns must be the same.")
 
+    def __iter__(self):
+        """
+        Allows the Matrix object to be iterable.
+        Iterates over the rows.
+        """
+        return iter(self.arrays)
+
     def __sub__(self ,other):
         if self.rows != other.rows or self.cols != other.cols:
             raise ValueError("The number of rows and columns in the matrix must be the same")
