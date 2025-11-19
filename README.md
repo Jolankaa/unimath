@@ -219,7 +219,8 @@ $$
 $$
 
 -  Energy levels of a particle in a two-dimensional cubic box
-  $$
+
+$$
 E = \frac{\pi^2 \hbar^2}{2m} (n_x^2 + n_y^2 + n_z^2)
 $$
   
