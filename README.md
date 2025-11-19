@@ -223,6 +223,12 @@ $$
 $$
 E = \frac{\pi^2 \hbar^2}{2m} (n_x^2 + n_y^2 + n_z^2)
 $$
+
+```bash
+
+plot_infinite_box_2d(Lx=2.0, Ly=1.5, nx=4, ny=1, N=100)
+
+```
   
 
 ---
