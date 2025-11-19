@@ -226,7 +226,7 @@ $$
 
 ```bash
 
-plot_infinite_box_2d(Lx=2.0, Ly=1.5, nx=4, ny=1, N=100)
+Wave_Equation(Lx=2.0, Ly=1.5, nx=4, ny=1, N=100)
 
 ```
   
