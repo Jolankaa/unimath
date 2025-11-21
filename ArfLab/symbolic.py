@@ -4,7 +4,7 @@ from .errors import RequiredModule
 try:
     from sympy import symbols, Function, simplify, Matrix as SymMatrix
 except ModuleNotFoundError:
-    raise RequiredModule("The unimath library works integrated with sympy to perform symbolic operations, so we use sympy in functions that require symbolic operations.")
+    raise RequiredModule("The ArfLab library works integrated with sympy to perform symbolic operations, so we use sympy in functions that require symbolic operations.")
 
 
 

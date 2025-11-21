@@ -1,10 +1,10 @@
-# unimath — Mathematical Environment Library in Python
+# ArfLab — Mathematical Environment Library in Python
 
   
 
   
 
-**unimath** is a Python library that provides an abstract mathematical environment designed to represent and manipulate sets, intervals, and number systems in a symbolic and intuitive way.
+**ArfLab** is a Python library that provides an abstract mathematical environment designed to represent and manipulate sets, intervals, and number systems in a symbolic and intuitive way.
 
   
 
@@ -14,7 +14,7 @@ The project is continuously growing, with new mathematical structures and operat
 
   
 
-Developed and maintained by a **Mathematics undergraduate student at Marmara University**, unimath aims to combine mathematical theory with computational representation, creating a bridge between abstract reasoning and code implementation.
+Developed and maintained by a **Mathematics undergraduate student at Marmara University**, ArfLab aims to combine mathematical theory with computational representation, creating a bridge between abstract reasoning and code implementation.
 
   
 
@@ -243,7 +243,7 @@ Wave_Equation(Lx=2.0, Ly=1.5, nx=4, ny=1, N=100)
 
   
 
-unimath includes built-in vector visualization features using **matplotlib**, allowing users to plot and analyze vector relationships directly in Python. This helps bridge the gap between symbolic manipulation and geometric intuition.
+ArfLab includes built-in vector visualization features using **matplotlib**, allowing users to plot and analyze vector relationships directly in Python. This helps bridge the gap between symbolic manipulation and geometric intuition.
 
   
 
@@ -259,7 +259,7 @@ unimath includes built-in vector visualization features using **matplotlib**, al
 
 ```bash
 
-pip install unimath
+pip install ArfLab
 
 ```
 
@@ -269,9 +269,9 @@ pip install unimath
 
 ```bash
 
-git clone https://github.com/Jolankaa/unimath
+git clone https://github.com/Jolankaa/ArfLab
 
-cd unimath
+cd ArfLab
 
 pip install .
 
@@ -283,13 +283,13 @@ pip install .
 
 ```bash
 
-import unimath
+import ArfLab
 
 # Example: Creating a vector
 
   
 
-v = unimath.Vector([1,2,3])
+v = ArfLab.Vector([1,2,3])
 
   
 
@@ -305,7 +305,7 @@ v.Visualization()
 
   
 
-m = unimath.Matrix([[1,2],[3,4]])
+m = ArfLab.Matrix([[1,2],[3,4]])
 
 print("Determinant:", m.determinant())
 

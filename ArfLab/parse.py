@@ -4,7 +4,7 @@
 import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
-from unimath.mset import Mset
+from ArfLab.mset import Mset
 
 def ParseMset(s):
     """

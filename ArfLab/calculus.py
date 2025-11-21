@@ -1,5 +1,5 @@
 # Poyraz Soylu
-# unimath
+# ArfLab
 # analysis functions
 
 from functools import reduce

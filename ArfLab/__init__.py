@@ -5,10 +5,12 @@ from .matrix import Matrix
 from .plane_geometry import Vector,Line 
 from .sets import Bool_Integer,Bool_Natural,Bool_RealNumber,Integer
 from .symbolic import SymbolicVariable,SymbolicMatrix,SymbolicExpression,Sequence
+from .waveq import Wave_Equation
 
-__version__ = "1.4.4"
+__version__ = "2.0.0"
 
 __all__ = [
+    "Wave_Equation",
     "SymbolicVariable",
     "SymbolicMatrix",
     "SymbolicExpression",
