@@ -6,10 +6,17 @@ from .plane_geometry import Vector,Line
 from .sets import Bool_Integer,Bool_Natural,Bool_RealNumber,Integer
 from .symbolic import SymbolicVariable,SymbolicMatrix,SymbolicExpression,Sequence
 from .waveq import Wave_Equation
+from .trigonometry import cos,sin,tan,cot,sec,csc
 
-__version__ = "2.0.0"
+__version__ = "2.1.0"
 
 __all__ = [
+    "cos",
+    "sin",
+    "tan",
+    "cot",
+    "sec",
+    "csc",
     "Wave_Equation",
     "SymbolicVariable",
     "SymbolicMatrix",
