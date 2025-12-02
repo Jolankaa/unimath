@@ -180,7 +180,23 @@ class Matrix:
         except IndexError:
             raise DefinitionError("wrong index defined")
         
-
+    def Permanent(self):
+        n = len(self)
+        total = 0
+        for i in range(1 << n):
+            prod = 1
+            cols = [j for j in range(n) if (i >> j) & 1]
+            for r in range(n):
+                row_sum = 0
+                for c in cols:
+                    row_sum += self[r][c]
+                prod *= row_sum
+            
+            if (n - len(cols)) % 2 == 1:
+                total -= prod
+            else:
+                total += prod
+        return total
 
 
     """  
@@ -238,11 +254,17 @@ class Matrix:
 
     def __repr__(self):
         return "\n".join(str(row) for row in self.arrays)
+    
+    def __len__(self):
+        return len(self.arrays)
+
+    def __getitem__(self, index):
+        return self.arrays[index]
 
 """A = Matrix([
     [1, 2, 3],
     [2, 5, 5],
-    [2, 5, "n"]
+    [2, 5, 5]
 ])
 
-print(A.Determinant())"""
+print(A.Permanent())"""

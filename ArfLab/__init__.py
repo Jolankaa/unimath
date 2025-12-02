@@ -6,11 +6,12 @@ from .plane_geometry import Vector,Line
 from .sets import Bool_Integer,Bool_Natural,Bool_RealNumber,Integer
 from .symbolic import SymbolicVariable,SymbolicMatrix,SymbolicExpression,Sequence
 from .waveq import Wave_Equation
-from .trigonometry import cos,sin,tan,cot,sec,csc
+from .trigonometry import cos,sin,tan,cot,sec,csc,radian_to_degree
 
-__version__ = "2.1.0"
+__version__ = "2.1.1"
 
 __all__ = [
+    "radian_to_degree",
     "cos",
     "sin",
     "tan",
