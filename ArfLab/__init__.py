@@ -8,7 +8,7 @@ from .symbolic import SymbolicVariable,SymbolicMatrix,SymbolicExpression,Sequenc
 from .waveq import Wave_Equation
 from .trigonometry import cos,sin,tan,cot,sec,csc,radian_to_degree
 
-__version__ = "2.1.1"
+__version__ = "2.1.2"
 
 __all__ = [
     "radian_to_degree",

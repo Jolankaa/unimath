@@ -138,6 +138,10 @@ Developed and maintained by a **Mathematics undergraduate student at Marmara Uni
 
 - (3,3) Sarrus Method
 
+
+
+- Permanent Algorithm 
+
   
 
   

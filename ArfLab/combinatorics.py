@@ -58,7 +58,7 @@ def combination(n: int, r: int) -> int:
     else:
         NonCompliancaRecognition()
 
-    return factorial(n)/factorial(r)*factorial(n - r)
+    return factorial(n)/(factorial(r)*factorial(n - r))
 
 def posibilty(n:int , r: int) -> int:
     """

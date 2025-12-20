@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: ArfLab
-Version: 2.1.1
+Version: 2.1.2
 Summary: Mathematical Environment Library in Python
 Home-page: https://github.com/Jolankaa/unimath
 Author: Poyraz Soylu
@@ -163,6 +163,10 @@ Developed and maintained by a **Mathematics undergraduate student at Marmara Uni
   
 
 - (3,3) Sarrus Method
+
+
+
+- Permanent Algorithm 
 
   
 
